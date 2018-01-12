@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormInputComponent } from './form-input/form-input.component';
 import { InfoListComponent } from './info-list/info-list.component';
 import { CompSubjectComponent } from './comp-subject/comp-subject.component';
-import { NewDirectiveDirective } from './new-directive.directive';
+import { NewDirectiveDirective, UnlessDirective } from './new-directive.directive';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { NewDirectiveDirective } from './new-directive.directive';
     FormInputComponent,
     InfoListComponent,
     CompSubjectComponent,
-    NewDirectiveDirective
+    NewDirectiveDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule

@@ -1,7 +1,7 @@
 <div class="form-input">
-    <span appNewDirective="blue" highlightColor="green">{{name}}</span>
-    <span [appNewDirective]="redColor" highlightColor="green">{{name}}</span>
-    <span appNewDirective [highlightColor]="redColor">{{name}}</span>
+    <span appNewDirective="blue" highlightColor="green" [obj]="item" [clicks]="directiveEmit">{{name}}</span>
+    <span [appNewDirective]="redColor" highlightColor="green" [obj]="item">{{name}}</span>
+    <span appNewDirective [highlightColor]="redColor" [obj]="item">{{name}}</span>
     <br> {{inputCheckbox}}
     <span *ngIf="true" [innerHTML]="name"></span>
     <button [disabled]="inputCheckbox">Save</button>
@@ -24,7 +24,7 @@
         <span [innerHTML]="spanHtml"></span>
     </div>
 
-    <div [hidden]="isShowList" *ngFor="let hero of heros; let i = index ; trackBy: trackByHeroes">
+    <div class="num-list" [hidden]="isShowList" [class.odd]="odd" [class.even]="even" *ngFor="let hero of heros; let i = index ; let even = even let odd = odd; trackBy: trackByHeroes">
         <span>{{hero.id}}</span>
     </div>
     <div>

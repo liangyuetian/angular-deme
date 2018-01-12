@@ -18,6 +18,7 @@ export class FormInputComponent implements OnInit {
     spanHtml: SafeHtml;
     isShowList: true;
     renderHtml;
+    item = { id: 1, name: "王闯" };
     heros = [];
     @ViewChild(InfoListComponent) // 
     private infoList: InfoListComponent; // 获取子组件
@@ -29,10 +30,14 @@ export class FormInputComponent implements OnInit {
         let hero = [];
         for (let i = 0; i < 10; i++) {
             hero.push({
-                id: Math.random()
+                id: Math.random().toFixed(2)
             })
         }
         this.heros = hero;
+
+        // window.setInterval(() => {
+        //     console.log(this.item)
+        // }, 1000)
     }
     inputChange(e) {
         // e.preventDefault();
@@ -53,6 +58,15 @@ export class FormInputComponent implements OnInit {
     }
     onVoted(params) {
         console.log("父组件触发", params)
+    }
+    directiveEmit() {
+        console.log("由指令触发，输出一个父组件的值redColor：", this.redColor);
+        console.log(this);
+        // 此时的this作用域为子组件
+        // 写法为：[clicks]="directiveEmit"
+        // 此时的作用域为当前组件,但是会不按规则的触发
+        // 写法为 [clicks]="directiveEmit()"
+
     }
     // ngAfterViewInit() {
 

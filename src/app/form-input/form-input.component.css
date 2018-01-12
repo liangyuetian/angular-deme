@@ -1,0 +1,24 @@
+.num-list {
+    float: left;
+    padding: 0 10px;
+}
+
+.num-list:nth-child(odd) {
+    color: aqua;
+}
+
+.num-list:nth-child(even) {
+    color: burlywood
+}
+
+.num-list:nth-child(3n -1) {
+    color: wheat
+}
+
+div.odd {
+    background-color: lightsalmon;
+}
+
+div.even {
+    background-color: cadetblue;
+}
