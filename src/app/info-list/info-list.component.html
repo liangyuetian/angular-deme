@@ -1,0 +1,6 @@
+<div>
+    <h1 [innerHTML]="name"></h1>
+    <ul>
+        <li *ngFor="let lis of list;" (click)="vote($event,lis)">{{ lis.id.toString().substring(2,5) }}</li>
+    </ul>
+</div>

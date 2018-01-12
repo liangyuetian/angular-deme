@@ -1,0 +1,41 @@
+:host {
+    /* 宿主元素 */
+    /* 即 <app-info-list></app-info-list> */
+    color: red;
+}
+
+:host(.active) {
+    border-width: 3px;
+}
+
+:host-context {
+    /* 它在当前组件宿主元素的祖先节点中查找 CSS 类 */
+}
+
+:host-context() h1 {
+    /* 它在当前组件宿主元素的祖先节点中查找 CSS 类 */
+    /* 选中父级的 .theme-light 下的h2 */
+    background-color: #eef;
+}
+
+:host-context(.theme-light) {
+    /* 它在当前组件宿主元素的祖先节点中查找 CSS 类 */
+    /* 选中宿主元素下的别的css文件添加的样式的 .theme-light 下的h2 */
+    display: inline-block;
+    padding: 10px;
+    background-color: red;
+}
+
+li {
+    float: left;
+    padding: 0px 10px;
+    list-style-type: none;
+}
+
+li:nth-child(2n+1) {
+    color: lawngreen
+}
+
+li:nth-child(3n+1) {
+    color: rosybrown
+}

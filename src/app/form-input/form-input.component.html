@@ -1,0 +1,42 @@
+<div class="form-input">
+    <span appNewDirective="blue" highlightColor="green">{{name}}</span>
+    <span [appNewDirective]="redColor" highlightColor="green">{{name}}</span>
+    <span appNewDirective [highlightColor]="redColor">{{name}}</span>
+    <br> {{inputCheckbox}}
+    <span *ngIf="true" [innerHTML]="name"></span>
+    <button [disabled]="inputCheckbox">Save</button>
+    <input type="checkbox" [(checked)]="inputCheckbox" value="王闯" #iput/>
+    <input type="checkbox" [checked]="inputCheckbox" (click)="inputChange(iput.value)" />
+    <button disabled="false" id="xs">仍被禁用</button>
+    <span id="xx" [innerHTML]="spanHtml"> </span>
+    <span id="xx" [innerHTML]="renderHtml"> </span>
+
+    <div>
+        <span [attr.colspan]="1 + 1">
+            attribute 绑定的语法与属性绑定类似。 但方括号中的部分不是元素的属性名，而是由attr前缀，一个点 (.) 和 attribute 的名字组成。 可以通过值为字符串的表达式来设置 attribute 的值。
+        </span>
+        <button [attr.aria-label]="actionName">ARIA指可访问性，用于给残障人士访问互联网提供便利</button>
+    </div>
+    <div *ngIf="isShowList">
+        是否会显示呢
+    </div>
+    <div>
+        <span [innerHTML]="spanHtml"></span>
+    </div>
+
+    <div [hidden]="isShowList" *ngFor="let hero of heros; let i = index ; trackBy: trackByHeroes">
+        <span>{{hero.id}}</span>
+    </div>
+    <div>
+        <p>这是子组件的一部分变量</p>
+        <p>
+            <span [ngStyle]="{fontSize: '20px', color: 'red'}">局限</span>
+            父组件-子组件的连接必须全部在父组件的模板中进行。父组件本身的代码对子组件没有访问权
+        </p>
+        <span [ngStyle]="{color: 'red'}">
+            {{ infolist.test }}
+        </span>
+    </div>
+
+    <app-info-list #infolist (onVoted)="onVoted($event)" [name]="spanHtml" [list]="heros"></app-info-list>
+</div>

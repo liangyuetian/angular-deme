@@ -3,11 +3,19 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { FormInputComponent } from './form-input/form-input.component';
+import { InfoListComponent } from './info-list/info-list.component';
+import { CompSubjectComponent } from './comp-subject/comp-subject.component';
+import { NewDirectiveDirective } from './new-directive.directive';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormInputComponent,
+    InfoListComponent,
+    CompSubjectComponent,
+    NewDirectiveDirective
   ],
   imports: [
     BrowserModule
