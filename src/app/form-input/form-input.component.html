@@ -2,8 +2,8 @@
     <span appNewDirective="blue" highlightColor="green" [obj]="item" [clicks]="directiveEmit">{{name}}</span>
     <span [appNewDirective]="redColor" highlightColor="green" [obj]="item">{{name}}</span>
     <span appNewDirective [highlightColor]="redColor" [obj]="item">{{name}}</span>
-    <br> {{inputCheckbox}}
-    <span *ngIf="true" [innerHTML]="name"></span>
+    <br> {{inputCheckbox | newPipe}}
+    <span *ngIf="true" [innerHTML]="name" [@heroState]="state" (click)="toggleState()"></span>
     <button [disabled]="inputCheckbox">Save</button>
     <input type="checkbox" [(checked)]="inputCheckbox" value="王闯" #iput/>
     <input type="checkbox" [checked]="inputCheckbox" (click)="inputChange(iput.value)" />

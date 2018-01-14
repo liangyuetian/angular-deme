@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule, Renderer2, ElementRef, Directive } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { InfoListComponent } from "../info-list/info-list.component"; // 导入子组件
@@ -9,7 +10,21 @@ interface HeroT {
 @Component({
     selector: 'app-form-input',
     templateUrl: './form-input.component.html',
-    styleUrls: ['./form-input.component.css']
+    styleUrls: ['./form-input.component.css'],
+    animations: [
+        trigger('heroState', [
+            state('inactive', style({
+                backgroundColor: '#eee',
+                transform: 'scale(1)'
+            })),
+            state('active', style({
+                backgroundColor: '#cfd8dc',
+                transform: 'scale(1.1)'
+            })),
+            transition('inactive => active', animate('100ms ease-in')),
+            transition('active => inactive', animate('100ms ease-out'))
+        ])
+    ]
 })
 export class FormInputComponent implements OnInit {
     name = "alasiding";
@@ -20,6 +35,7 @@ export class FormInputComponent implements OnInit {
     renderHtml;
     item = { id: 1, name: "王闯" };
     heros = [];
+    state = "active"
     @ViewChild(InfoListComponent) // 
     private infoList: InfoListComponent; // 获取子组件
     constructor(private domSanitizer: DomSanitizer, private renderer: Renderer2) {
@@ -67,6 +83,9 @@ export class FormInputComponent implements OnInit {
         // 此时的作用域为当前组件,但是会不按规则的触发
         // 写法为 [clicks]="directiveEmit()"
 
+    }
+    toggleState() {
+        this.state = this.state === 'active' ? 'inactive' : 'active';
     }
     // ngAfterViewInit() {
 
