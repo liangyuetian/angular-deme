@@ -7,8 +7,9 @@ import { FormInputComponent } from './form-input/form-input.component';
 import { InfoListComponent } from './info-list/info-list.component';
 import { CompSubjectComponent } from './comp-subject/comp-subject.component';
 import { NewDirectiveDirective, UnlessDirective } from './new-directive.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NewPipePipe } from './new-pipe.pipe';
-import { animations } 
+import { appCompKey } from "./form/form-component";
 
 @NgModule({
   declarations: [
@@ -18,11 +19,13 @@ import { animations }
     CompSubjectComponent,
     NewDirectiveDirective,
     UnlessDirective,
-    NewPipePipe
+    NewPipePipe,
+    appCompKey
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
