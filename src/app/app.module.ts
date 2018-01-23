@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import httpServer from "./http/http-component.js";
 
 import { AppComponent } from './app.component';
 import { FormInputComponent } from './form-input/form-input.component';
@@ -25,9 +27,12 @@ import { appCompKey } from "./form/form-component";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    httpServer
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

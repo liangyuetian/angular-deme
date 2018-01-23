@@ -3,6 +3,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { InfoListComponent } from "../info-list/info-list.component"; // 导入子组件
+import { HttpClient } from "@angular/common/http";
+import httpServer from "../http/http-component.js";
+
 interface HeroT {
     id: number
 }
@@ -35,10 +38,11 @@ export class FormInputComponent implements OnInit {
     renderHtml;
     item = { id: 1, name: "王闯" };
     heros = [];
-    state = "active"
+    state = "active";
+
     @ViewChild(InfoListComponent) // 
     private infoList: InfoListComponent; // 获取子组件
-    constructor(private domSanitizer: DomSanitizer, private renderer: Renderer2) {
+    constructor(private userApi: httpServer, private http: HttpClient, private domSanitizer: DomSanitizer, private renderer: Renderer2) {
     }
     ngOnInit() {
         this.spanHtml = this.domSanitizer.bypassSecurityTrustHtml(`<span style='color: red;'>红色${this.inputCheckbox}</span>`);
@@ -50,10 +54,14 @@ export class FormInputComponent implements OnInit {
             })
         }
         this.heros = hero;
-
-        // window.setInterval(() => {
-        //     console.log(this.item)
-        // }, 1000)
+        console.log(this.http);
+        // let httpserver = new httpServer(this.http);
+        // httpserver.show({ observe: 'response' }).subscribe((data) => {
+        //     console.log(data)
+        // });
+        this.userApi.show({ observe: 'response' }).subscribe((data) => {
+            console.log(data)
+        });
     }
     inputChange(e) {
         // e.preventDefault();
