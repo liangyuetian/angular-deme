@@ -6,6 +6,7 @@ import { InfoListComponent } from "../info-list/info-list.component"; // 导入�
 import { HttpClient } from "@angular/common/http";
 import httpServer from "../http/http-component.js";
 
+import { ActivatedRoute } from "@angular/router";
 interface HeroT {
     id: number
 }
@@ -42,7 +43,7 @@ export class FormInputComponent implements OnInit {
 
     @ViewChild(InfoListComponent) // 
     private infoList: InfoListComponent; // 获取子组件
-    constructor(private userApi: httpServer, private http: HttpClient, private domSanitizer: DomSanitizer, private renderer: Renderer2) {
+    constructor(private activatedRoute: ActivatedRoute, private userApi: httpServer, private http: HttpClient, private domSanitizer: DomSanitizer, private renderer: Renderer2) {
     }
     ngOnInit() {
         this.spanHtml = this.domSanitizer.bypassSecurityTrustHtml(`<span style='color: red;'>红色${this.inputCheckbox}</span>`);
@@ -62,6 +63,8 @@ export class FormInputComponent implements OnInit {
         this.userApi.show({ observe: 'response' }).subscribe((data) => {
             console.log(data)
         });
+
+        console.log("路由信息", this.activatedRoute);
     }
     inputChange(e) {
         // e.preventDefault();

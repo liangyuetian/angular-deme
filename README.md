@@ -1,6 +1,17 @@
 # angular-deme
 自己学习angular时的示例代码，供自己查阅
 
+```js
+delete node_modules
+run npm install -g nrm
+
+run nrm use taobao
+run npm instll
+-----or------
+run nrm use cnpm
+run npm instll
+```
+ng build --prod --no-extract-license
 # Demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.

@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 import httpServer from "./http/http-component.js";
+import apRouters from "./router/router-component";
 
 import { AppComponent } from './app.component';
 import { FormInputComponent } from './form-input/form-input.component';
@@ -28,7 +30,13 @@ import { appCompKey } from "./form/form-component";
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      apRouters,
+      {
+        // enableTracing: true, // debugging 模式，会打印出各种路由信息
+      }
+    )
   ],
   providers: [
     httpServer

@@ -4,6 +4,11 @@
     <span appNewDirective [highlightColor]="redColor" [obj]="item">{{name}}</span>
     <br> {{inputCheckbox | newPipe}}
     <span *ngIf="true" [innerHTML]="name" [@heroState]="state" (click)="toggleState()"></span>
+    <br>
+    <nav>
+        <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+        <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+    </nav>
     <button [disabled]="inputCheckbox">Save</button>
     <input type="checkbox" [(checked)]="inputCheckbox" value="王闯" #iput/>
     <input type="checkbox" [checked]="inputCheckbox" (click)="inputChange(iput.value)" />

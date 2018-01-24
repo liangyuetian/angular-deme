@@ -22,3 +22,7 @@ div.odd {
 div.even {
     background-color: cadetblue;
 }
+
+.active {
+    color: aquamarine;
+}
