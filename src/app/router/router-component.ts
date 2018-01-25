@@ -6,7 +6,7 @@ import { FormInputComponent } from "../form-input/form-input.component";
 
 
 
-const apRouters: Routes = [
+export const apRouters: Routes = [
     {
         path: "crisis-center",
         component: FormInputComponent
@@ -18,17 +18,17 @@ const apRouters: Routes = [
             title: "这是路由传递的参数"
         }
     },
-    {
-        path: "",
-        redirectTo: "/heroes",
-        pathMatch: "full",
-    },
+    // {
+    //     path: "",
+    //     redirectTo: "/heroes",
+    //     pathMatch: "full",
+    // },
     {
         path: "**", // 404 - Not Found
         component: FormInputComponent,
     }
-]
-export default apRouters
+];
+// export apRouters  这样写会报错，不允许这样写，且不允许 export default 
 // @NgModule({
 //     imports: [
 //       RouterModule.forRoot(

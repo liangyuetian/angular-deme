@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import httpServer from "./http/http-component.js";
-import apRouters from "./router/router-component";
+import { apRouters } from "./router/router-component";
 
 import { AppComponent } from './app.component';
 import { FormInputComponent } from './form-input/form-input.component';
