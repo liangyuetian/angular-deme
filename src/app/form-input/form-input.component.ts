@@ -4,7 +4,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { InfoListComponent } from "../info-list/info-list.component"; // 导入子组件
 import { HttpClient } from "@angular/common/http";
-import httpServer from "../http/http-component.js";
+import { httpServer } from "../http/http-component.js";
 
 import { ActivatedRoute } from "@angular/router";
 interface HeroT {
@@ -41,7 +41,7 @@ export class FormInputComponent implements OnInit {
     heros = [];
     state = "active";
 
-    @ViewChild(InfoListComponent) // 
+    @ViewChild(InfoListComponent) //
     private infoList: InfoListComponent; // 获取子组件
     constructor(private activatedRoute: ActivatedRoute, private userApi: httpServer, private http: HttpClient, private domSanitizer: DomSanitizer, private renderer: Renderer2) {
     }
@@ -61,7 +61,7 @@ export class FormInputComponent implements OnInit {
         //     console.log(data)
         // });
         this.userApi.show({ observe: 'response' }).subscribe((data) => {
-            console.log(data)
+            console.log(data);
         });
 
         console.log("路由信息", this.activatedRoute);

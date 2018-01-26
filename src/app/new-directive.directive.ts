@@ -61,17 +61,25 @@ export class UnlessDirective {
     constructor(
         private templateRef: TemplateRef<any>, // 大概等于 react中的 this.props.children
         private viewContainer: ViewContainerRef
-    ) { }
+    ) {
+        console.log("templateRef", this.templateRef);
+        console.log("viewContainer", this.viewContainer);
+    }
     hasView;
+
     @Input()
     set appUnless(condition: boolean) {
-        if (!condition && !this.hasView) {
-            this.viewContainer.createEmbeddedView(this.templateRef);
-            this.hasView = true;
-        }
-        else if (condition && this.hasView) {
-            this.viewContainer.clear();
-            this.hasView = false;
-        }
+        // if (!condition && !this.hasView) {
+        this.viewContainer.createEmbeddedView(this.templateRef);
+        this.hasView = true;
+        console.log("templateRef", this.templateRef);
+        console.log("viewContainer", this.viewContainer);
+        // }
+        // else if (condition && this.hasView) {
+        //     this.viewContainer.clear();
+        //     this.hasView = false;
+        // }
     }
+
+
 }

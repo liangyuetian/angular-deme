@@ -4,17 +4,19 @@ import { FormInputComponent } from "../form-input/form-input.component";
 
 const heroesRoutes: Routes = [
     {
+        path: "",
+        component: FormInputComponent,
+    },
+    {
         path: "word2",
-        component: FormInputComponent
+        component: FormInputComponent,
+
     },
     {
         path: "word/:id",
         component: FormInputComponent
     },
-    {
-        path: "",
-        component: FormInputComponent,
-    },
+
 ];
 
 // router 声明：declare  即可以存在的参数

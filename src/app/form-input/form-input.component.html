@@ -20,7 +20,7 @@
         <span [attr.colspan]="1 + 1">
             attribute 绑定的语法与属性绑定类似。 但方括号中的部分不是元素的属性名，而是由attr前缀，一个点 (.) 和 attribute 的名字组成。 可以通过值为字符串的表达式来设置 attribute 的值。
         </span>
-        <button [attr.aria-label]="actionName">ARIA指可访问性，用于给残障人士访问互联网提供便利</button>
+        <button>ARIA指可访问性，用于给残障人士访问互联网提供便利</button>
     </div>
     <div *ngIf="isShowList">
         是否会显示呢
@@ -42,6 +42,10 @@
             {{ infolist.test }}
         </span>
     </div>
-
+    <div *appUnless="heros">
+        <div>
+            我是一个结构型指令
+        </div>
+    </div>
     <app-info-list #infolist (onVoted)="onVoted($event)" [name]="spanHtml" [list]="heros"></app-info-list>
 </div>

@@ -2,7 +2,7 @@ import { Injectable, Component, OnInit, NgModule } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
-export default class httpServer implements OnInit {
+export class httpServer implements OnInit {
 
     constructor(private http: HttpClient) {
 
