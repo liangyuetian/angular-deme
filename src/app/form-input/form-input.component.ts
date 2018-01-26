@@ -55,7 +55,7 @@ export class FormInputComponent implements OnInit {
             })
         }
         this.heros = hero;
-        console.log(this.http);
+        console.log(this);
         // let httpserver = new httpServer(this.http);
         // httpserver.show({ observe: 'response' }).subscribe((data) => {
         //     console.log(data)
