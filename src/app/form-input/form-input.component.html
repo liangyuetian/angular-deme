@@ -15,7 +15,17 @@
     <button disabled="false" id="xs">仍被禁用</button>
     <span id="xx" [innerHTML]="spanHtml"> </span>
     <span id="xx" [innerHTML]="renderHtml"> </span>
+    <component1-selector></component1-selector>
+    <component2-selector></component2-selector>
 
+    <el-button>默认按钮</el-button>
+    <el-button type="primary">主要按钮</el-button>
+    <el-button type="text">文字按钮</el-button>
+    <el-button>文字按钮</el-button>
+    <el-button [round]="true">文字按钮</el-button>
+    <!-- <div [el-loading]="true">
+        <el-tag>加载中..</el-tag>
+    </div> -->
     <div>
         <span [attr.colspan]="1 + 1">
             attribute 绑定的语法与属性绑定类似。 但方括号中的部分不是元素的属性名，而是由attr前缀，一个点 (.) 和 attribute 的名字组成。 可以通过值为字符串的表达式来设置 attribute 的值。

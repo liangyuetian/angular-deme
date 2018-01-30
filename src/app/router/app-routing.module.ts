@@ -14,7 +14,9 @@ const heroesRoutes: Routes = [
     },
     {
         path: "word/:id",
-        component: FormInputComponent
+        component: FormInputComponent,
+        // loadChildren: "app/form-input/form-input.componentcomponent#FormInputComponent",
+        // 惰性加载模块的位置是字符串而不是类型。 在本应用中，该字符串同时标记出了模块文件和模块类，两者用#分隔开。
     },
 
 ];

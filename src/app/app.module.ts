@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { httpServer } from "./http/http-component.js";
 // import { apRouters } from "./router/router-component";
 import { AppRouterModule } from "./router/app-routing.module";
+import { ElModule, ElChildModules } from 'element-angular';
+import 'element-angular/theme/index.css';
 
 import { AppComponent } from './app.component';
 import { FormInputComponent } from './form-input/form-input.component';
@@ -16,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NewPipePipe } from './new-pipe.pipe';
 import { appCompKey } from "./form/form-component";
 
+import { ContactModule } from "./module/contact.module";
 @NgModule({
     declarations: [
         AppComponent,
@@ -29,10 +33,13 @@ import { appCompKey } from "./form/form-component";
     ],
     imports: [
         BrowserModule,
+        CommonModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
         HttpClientModule,
         AppRouterModule,
+        ElModule.forRoot(),
+        ContactModule
         // RouterModule.forRoot(
         //   apRouters,
         //   {
@@ -40,7 +47,7 @@ import { appCompKey } from "./form/form-component";
         //   }
         // )
     ],
-    providers: [
+    providers: [ // 服务，供应商，使用时需要依赖注入
         httpServer
     ],
     bootstrap: [AppComponent]

@@ -64,7 +64,8 @@ export class FormInputComponent implements OnInit {
             console.log(data);
         });
 
-        console.log("路由信息", this.activatedRoute);
+        // console.log("路由信息", this.activatedRoute);
+        console.log(this);
     }
     inputChange(e) {
         // e.preventDefault();
@@ -84,11 +85,11 @@ export class FormInputComponent implements OnInit {
         return hero.id
     }
     onVoted(params) {
-        console.log("父组件触发", params)
+        // console.log("父组件触发", params)
     }
     directiveEmit() {
-        console.log("由指令触发，输出一个父组件的值redColor：", this.redColor);
-        console.log(this);
+        // console.log("由指令触发，输出一个父组件的值redColor：", this.redColor);
+        // console.log(this);
         // 此时的this作用域为子组件
         // 写法为：[clicks]="directiveEmit"
         // 此时的作用域为当前组件,但是会不按规则的触发
@@ -103,7 +104,7 @@ export class FormInputComponent implements OnInit {
     // }
     ngOnChanges() {
         // （重新）设置数据绑定输入属性时响应，该方法接受当前和上一属性值的
-        console.log("设置");
+        // console.log("设置");
     }
     ngDoCheck() {
         // 检测，并在发生Angular无法或不愿意自己检测的变化时作出反应。
@@ -114,8 +115,8 @@ export class FormInputComponent implements OnInit {
         // 当把内容投影进组件后之后调用，
         // 第一次ngDoCheck()之后调用，只调用一次。
         // 只调用一次
-        console.log("@ViewChild");
-        console.log(this.infoList);
+        // console.log("@ViewChild");
+        // console.log(this.infoList);
     }
     ngAfterViewInit() {
         // 初始化完组件视图及其子视图之后调用。
