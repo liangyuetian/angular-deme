@@ -15,7 +15,8 @@ import { AwesomePipe } from './pipe/awesome.pipe';
     ],
     exports: [
         Component1,
-        Component2
+        Component2,
+        AwesomePipe
     ]
 
 })

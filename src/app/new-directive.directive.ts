@@ -56,24 +56,26 @@ export class NewDirectiveDirective {
 
 @Directive({ selector: '[appUnless]' })
 export class UnlessDirective {
+    hasView;
     // 把它们都注入到指令的构造函数中，作为该类的私有属性
     // 强调：类的私有属性
     constructor(
         private templateRef: TemplateRef<any>, // 大概等于 react中的 this.props.children
         private viewContainer: ViewContainerRef
     ) {
-        console.log("templateRef", this.templateRef);
-        console.log("viewContainer", this.viewContainer);
+        // console.log("templateRef", this.templateRef);
+        // console.log("viewContainer", this.viewContainer);
+        this.viewContainer.createEmbeddedView(this.templateRef);
+        this.hasView = true;
     }
-    hasView;
 
     @Input()
     set appUnless(condition: boolean) {
         // if (!condition && !this.hasView) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-        this.hasView = true;
-        console.log("templateRef", this.templateRef);
-        console.log("viewContainer", this.viewContainer);
+        // this.viewContainer.createEmbeddedView(this.templateRef);
+        // this.hasView = true;
+        // console.log("templateRef", this.template
+
         // }
         // else if (condition && this.hasView) {
         //     this.viewContainer.clear();

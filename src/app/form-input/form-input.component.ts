@@ -75,7 +75,7 @@ export class FormInputComponent implements OnInit {
         let hero = [];
         for (let i = 0; i < 10; i++) {
             hero.push({
-                id: Math.random()
+                id: Math.random().toFixed(2)
             })
         }
         this.heros = hero;
